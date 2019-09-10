@@ -223,7 +223,7 @@ wss.on('connection', function connection(ws) {
               let winAmountOccurence = getOccurrence(dies ,parseInt(number))
             //   console.log('win',winAmountOccurence)
               let betAmount = numbers[number].betAmount
-              console.log('betting',betAmount)
+            //   console.log('betting',betAmount)
               numbers = update(numbers , {[number]:{winAmount : {$set:winAmountOccurence*betAmount}}})
               console.log(numbers)
 
@@ -344,8 +344,8 @@ wss.on('connection', function connection(ws) {
         
 
 
-    ws.on('close', function() {
-        // clients.delete(ws);
-        console.log("closed called")
-    });
+   //  ws.on('close', function() {
+   //      // clients.delete(ws);
+   //      console.log("closed called")
+   //  });
 })
