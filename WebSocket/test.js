@@ -271,72 +271,16 @@ wss.on('connection', function connection(ws) {
                 client.send(JSON.stringify(result))
             })
 
-            bets = {
-                1: [],
-                2:[],
-                3:[],
-                4:[],
-                5:[],
-                6:[]
-             }
-             
-             numbers = {
-                1:{
-                   "betAmount" : 0,
-                   "winAmount": null
-                },
-                2:{
-                   "betAmount" : 0,
-                   "winAmount": null
-                },
-                3:{
-                   "betAmount" : 0,
-                   "winAmount": null
-                },
-                4:{
-                   "betAmount" : 0,
-                   "winAmount": null
-                },
-                5:{
-                   "betAmount" : 0,
-                   "winAmount": null
-                },
-                6:{
-                   "betAmount" : 0,
-                   "winAmount": null
-                }
-             }
-             
-             players = []
-             
-             summary = {
-                type : "summary",
-                data : {
-                   game : {
-                      id : "id1",
-                      table : "table1",
-                      status : "rolling_dice",
-                      bets : null,
-                      numbers : null,
-                      players : null,
-                      dealer : {
-                         name : "srikanth",
-                         gender : "male"
-                      }
-                   }
-                }
-             }
-             
-             betPlaces = []
-
+           
+          
 
             
-            // ws.send(JSON.stringify({  
-            //     type:"diceRolled",
-            //     data:{  
-            //        numbers:dies
-            //   }
-            // }))
+            ws.send(JSON.stringify({  
+                type:"diceRolled",
+                data:{  
+                   numbers:dies
+              }
+            }))
         }
     }
     
